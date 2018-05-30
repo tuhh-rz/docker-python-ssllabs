@@ -11,4 +11,8 @@ WORKDIR /opt/python-ssllabs/
 
 RUN python setup.py install
 
+RUN groupadd -r ssllabs-cli && useradd --no-log-init -r -g ssllabs-cli ssllabs-cli
+
+USER ssllabs-cli
+
 ENTRYPOINT ["ssllabs-cli.py"]
