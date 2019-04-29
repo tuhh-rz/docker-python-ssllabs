@@ -2,9 +2,6 @@ variables:
     # Das Image aus welchen Branch soll mit `latest` getagt werden?
     # Leer lassen, wenn der current branch der master branch sein soll
     CURRENT_BRANCH: ""
-
-    # we need lower case!!!
-    CI_PROJECT_NAMESPACE: docker
     
     CONTAINER_TEST_IMAGE: docker.rz.tu-harburg.de:5000/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$CI_PIPELINE_ID
     CONTAINER_VERSIONED_IMAGE: docker.rz.tu-harburg.de:5000/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
