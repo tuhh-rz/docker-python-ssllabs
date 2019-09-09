@@ -1,7 +1,6 @@
-FROM python:3
+FROM python:latest
 
-RUN apt-get update
-RUN apt-get -y upgrade
+RUN apt-get update && apt-get -y upgrade
 
 RUN pip install requests
 
