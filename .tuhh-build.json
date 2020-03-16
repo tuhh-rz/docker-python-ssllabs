@@ -8,6 +8,5 @@
             "name": "docker.rz.tu-harburg.de:5000",
             "state": "present"
         }
-    ],
-    "image-tags": {}
+    ]
 }
