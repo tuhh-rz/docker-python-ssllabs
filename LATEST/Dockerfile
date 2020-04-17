@@ -1,10 +1,19 @@
 FROM python:latest
 
+ARG VERSION=${VERSION}
+ENV VERSION=$VERSION
+RUN echo $VERSION
+
+ARG DOWNLOAD=${DOWNLOAD}
+ENV DOWNLOAD=$DOWNLOAD
+RUN echo $DOWNLOAD
+
+
 RUN apt-get update && apt-get -y upgrade
 
 RUN pip install requests
 
-RUN git clone https://github.com/takeshixx/python-ssllabs.git /opt/python-ssllabs
+RUN git clone -b ${VERSION} https://github.com/takeshixx/python-ssllabs.git /opt/python-ssllabs
 
 WORKDIR /opt/python-ssllabs/
 
