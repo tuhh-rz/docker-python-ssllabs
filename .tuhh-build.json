@@ -2,7 +2,8 @@
     "active": true,
     "version-check": {
         "active": false,
-        "master_key": "",
+        "master_key": "PythonSSLLabs",
+        "sub_key": "PythonSSLLabs",
         "version_digits_in_key": 0
     },
     "registries": [{
