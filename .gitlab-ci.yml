@@ -61,9 +61,9 @@ stages:
 
 build:latest:
   stage: build
+  rules:
+      - if: '$CI_COMMIT_REF_NAME == "master"'
   retry: 2
-  only:
-    - master
   tags:
     - build
   variables:
@@ -75,10 +75,10 @@ build:latest:
 deploy:latest:
   stage: deploy
   needs: ["build:latest"]
+  rules:
+      - if: '$CI_COMMIT_REF_NAME == "master"'
   tags:
     - deploy
-  only:
-    - master
   variables:
     VERSION: "LATEST"
     VARIANT: ""
@@ -86,11 +86,13 @@ deploy:latest:
 
 build:branches:latest:
   stage: build
-  retry: 2
-  only:
-    - branches
-  except:
-    - master
+  retry: 2 
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+      when: never
+    - if: '$CI_COMMIT_REF_NAME == "incubator"'
+      when: never
+    - when: always
   tags:
     - build
   variables:
@@ -104,10 +106,12 @@ deploy:branches:latest:
   needs: ["build:branches:latest"]
   tags:
     - deploy
-  only:
-    - branches
-  except:
-    - master
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+      when: never
+    - if: '$CI_COMMIT_REF_NAME == "incubator"'
+      when: never
+    - when: always
   variables:
     VERSION: "LATEST"
     VARIANT: ""
