@@ -1,0 +1,1 @@
+Funktioniert seit 2020-08-10 nicht mehr. Vielleicht sollte man auf https://github.com/jumanjihouse/docker-ssllabs-scan ausweichen.
