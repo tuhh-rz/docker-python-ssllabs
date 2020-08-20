@@ -1,19 +1,23 @@
 {
-    "active": true,
-    "version-check": {
-        "active": false,
-        "master_key": "PythonSSLLabs",
-        "sub_key": "PythonSSLLabs",
-        "version_digits_in_key": 0
+  "active": true,
+  "version-check": {
+    "active": false,
+    "master_key": "PythonSSLLabs",
+    "sub_key": "PythonSSLLabs",
+    "version_digits_in_key": 0
+  },
+  "registries": [
+    {
+      "name": "collaborating.tuhh.de:5005",
+      "state": "ignore"
     },
-    "registries": [{
-            "name": "collaborating.tuhh.de:5005",
-            "state": "ignore"
-        },
-        {
-            "name": "docker.rz.tu-harburg.de:5000",
-            "state": "present"
-        }
-    ],
-    "image-tags":{}
+    {
+      "name": "docker.rz.tu-harburg.de:5000",
+      "state": "present"
+    }
+  ],
+  "image-tags": {},
+  "upgrade-check": {
+    "active": true
+  }
 }
